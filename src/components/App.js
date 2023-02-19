@@ -4,11 +4,9 @@ import { Section } from './Section/Section';
 import { Layout } from './Layout/Layout';
 
 import { Profile } from './Profile/Profile';
-import { StatisticsList } from './Statistics/StatisticsList';
-import { StatisticsTitle } from './Statistics/StatisticsTitle';
-
-import { FriendList } from './Friends/FriendList';
-import { TransactionHistory } from './Transactions/TransactionHistory';
+import { Statistics } from './Statistics/Statistics';
+import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 import user from 'data/user.json';
 import data from 'data/data.json';
@@ -29,8 +27,7 @@ export const App = () => {
 
       <Section>
         <Layout>
-          <StatisticsTitle title="Upload stats" />
-          <StatisticsList stats={data} />
+          <Statistics title="Upload stats" stats={data} />
         </Layout>
       </Section>
 
@@ -48,17 +45,3 @@ export const App = () => {
     </main>
   );
 };
-
-//  return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101'
-//       }}
-//     >
-//       React homework template
-//     </div>
