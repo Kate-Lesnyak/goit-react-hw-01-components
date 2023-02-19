@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 import { Statistics } from './Statistics';
+import { List } from './StatisticsList.styled';
+import { Item } from './StatisticsList.styled';
 
-export const StatisticsList = ({stats}) => {
+export const StatisticsList = ({ stats }) => {
   return (
-  <ul className="stat-list">
+    <List>
       {stats.map(stat => (
-        <li key={stat.id}>
+        <Item key={stat.id}>
           <Statistics stat={stat} />
-        </li>
+        </Item>
       ))}
-  </ul>
+    </List>
   );
 };
 

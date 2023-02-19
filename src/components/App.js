@@ -1,7 +1,12 @@
+import { GlobalStyle } from './GlobalStyle';
+
+import { Section } from './Section/Section';
+import { Layout } from './Layout/Layout';
 
 import { Profile } from './Profile/Profile';
 import { StatisticsList } from './Statistics/StatisticsList';
-import { Section } from './Section/Section';
+import { StatisticsTitle } from './Statistics/StatisticsTitle';
+
 import { FriendList } from './Friends/FriendList';
 import { TransactionHistory } from './Transactions/TransactionHistory';
 
@@ -14,20 +19,31 @@ import transactions from 'data/transactions.json';
 export const App = () => {
   return (
     <main>
-      <Section>
-        <Profile user={user} />
-      </Section>
-
-      <Section title="Upload stats">
-        <StatisticsList stats={data} />
-      </Section>
+      <GlobalStyle />
 
       <Section>
-        <FriendList friends={friends} />
+        <Layout>
+          <Profile user={user} />
+        </Layout>
+      </Section>
+
+      <Section>
+        <Layout>
+          <StatisticsTitle title="Upload stats" />
+          <StatisticsList stats={data} />
+        </Layout>
+      </Section>
+
+      <Section>
+        <Layout>
+          <FriendList friends={friends} />
+        </Layout>
       </Section >
 
       <Section>
-        <TransactionHistory items={transactions} />
+        <Layout>
+          <TransactionHistory items={transactions} />
+        </Layout>
       </Section>
     </main>
   );
