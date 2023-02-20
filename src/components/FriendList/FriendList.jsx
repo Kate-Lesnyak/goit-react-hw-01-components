@@ -2,11 +2,9 @@ import PropTypes from 'prop-types';
 
 import { Section } from 'components/Section/Section';
 import { Layout } from 'components/Layout/Layout';
+
+import { StyledFriendList } from './FriendList.styled';
 import { FriendListItem } from './FriendListItem/FriendListItem';
-
-import { StyledFriendList, StyledFriendListItem } from './FriendList.styled';
-
-
 
 export const FriendList = ({ friends }) => {
   return (
@@ -14,16 +12,11 @@ export const FriendList = ({ friends }) => {
       <Layout>
         <StyledFriendList>
           {friends.map(friend => (
-            <StyledFriendListItem key={friend.id}>
-              <FriendListItem friend={friend} />
-            </StyledFriendListItem>
+            <FriendListItem key={friend.id} friend={friend} />
           ))}
         </StyledFriendList>
       </Layout>
     </Section>
-
-
-
   );
 };
 
