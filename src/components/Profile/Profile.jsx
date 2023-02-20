@@ -1,37 +1,63 @@
 import PropTypes from 'prop-types';
-import { StyledImg, StyledContainer, StyledWrapper, StyledInfo, StyledList, StyledItem, StyledTitle, StyledTag, StyledLocation, StyledItemLabel, StyledItemText } from './Profile.styled';
 
+import { Section } from 'components/Section/Section';
+import { Layout } from 'components/Layout/Layout';
 
-export const Profile = ({ user: { username, tag, location, avatar, stats: { followers, views, likes } } }) => {
+import {
+  StyledImg,
+  StyledContainer,
+  StyledWrapper,
+  StyledInfo,
+  StyledList,
+  StyledItem,
+  StyledTitle,
+  StyledTag,
+  StyledLocation,
+  StyledItemLabel,
+  StyledItemText,
+} from './Profile.styled';
+
+export const Profile = ({
+  user: {
+    username,
+    tag,
+    location,
+    avatar,
+    stats: { followers, views, likes },
+  },
+}) => {
   return (
-    <StyledContainer>
-      <StyledWrapper>
-        <StyledImg
-          src={avatar}
-          alt={username}
-        />
-        <StyledInfo>
-          <StyledTitle>{username}</StyledTitle>
-          <StyledTag>{tag}</StyledTag>
-          <StyledLocation>{location}</StyledLocation>
-        </StyledInfo>
-      </StyledWrapper>
+    <Section>
+      <Layout>
+        <StyledContainer>
+          <StyledWrapper>
+            <StyledImg src={avatar} alt={username} />
+            <StyledInfo>
+              <StyledTitle>{username}</StyledTitle>
+              <StyledTag>{tag}</StyledTag>
+              <StyledLocation>{location}</StyledLocation>
+            </StyledInfo>
+          </StyledWrapper>
 
-      <StyledList>
-        <StyledItem>
-          <StyledItemLabel>Followers</StyledItemLabel>
-          <StyledItemText>{followers}</StyledItemText>
-        </StyledItem>
-        <StyledItem>
-          <StyledItemLabel>Views</StyledItemLabel>
-          <StyledItemText>{views}</StyledItemText>
-        </StyledItem>
-        <StyledItem>
-          <StyledItemLabel>Likes</StyledItemLabel>
-          <StyledItemText>{likes}</StyledItemText>
-        </StyledItem>
-      </StyledList>
-    </StyledContainer>
+          <StyledList>
+            <StyledItem>
+              <StyledItemLabel>Followers</StyledItemLabel>
+              <StyledItemText>{followers}</StyledItemText>
+            </StyledItem>
+
+            <StyledItem>
+              <StyledItemLabel>Views</StyledItemLabel>
+              <StyledItemText>{views}</StyledItemText>
+            </StyledItem>
+
+            <StyledItem>
+              <StyledItemLabel>Likes</StyledItemLabel>
+              <StyledItemText>{likes}</StyledItemText>
+            </StyledItem>
+          </StyledList>
+        </StyledContainer>
+      </Layout>
+    </Section>
   );
 };
 
@@ -48,7 +74,3 @@ Profile.propTypes = {
     }).isRequired,
   }).isRequired,
 };
-
-
-
-

@@ -1,18 +1,24 @@
 import PropTypes from 'prop-types';
 
-import { StyledStaticsSection, StyledTitle } from './Statistics.styled';
-
+import { Section } from 'components/Section/Section';
+import { Layout } from 'components/Layout/Layout';
 import { StatisticsList } from './StatisticsList/StatisticsList';
+
+import { StyledStaticsSection, StyledTitle } from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <StyledStaticsSection>
-      {title && <StyledTitle>{title}</StyledTitle>}
-      <StatisticsList stats={stats} />
-    </StyledStaticsSection>
+    <Section>
+      <Layout>
+        <StyledStaticsSection>
+          {title && <StyledTitle>{title}</StyledTitle>}
+          <StatisticsList stats={stats} />
+        </StyledStaticsSection>
+      </Layout>
+    </Section>
   );
 };
 
 Statistics.propTypes = {
   title: PropTypes.string.isRequired,
-}
+};
