@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { getRandomHexColor } from 'utils/randomColor';
 
 export const StyledList = styled.ul`
 display: flex;
@@ -12,5 +13,6 @@ flex-basis: calc(100% / 5);
 padding: 10px;
 align-items: center;
 color: white;
+background-color: ${() => getRandomHexColor()};
 `;
 

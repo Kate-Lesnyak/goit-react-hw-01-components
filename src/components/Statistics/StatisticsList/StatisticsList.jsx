@@ -3,13 +3,14 @@ import { StatisticsItem } from '../StatisticsItem/StatisticsItem';
 import { StyledList } from './StatisticsList.styled';
 import { StyledItem } from './StatisticsList.styled';
 
-import { getRandomHexColor } from 'utils/randomColor';
+// import { getRandomHexColor } from 'utils/randomColor';
 
 export const StatisticsList = ({ stats }) => {
   return (
     <StyledList>
       {stats.map(stat => (
-        <StyledItem key={stat.id} style={{backgroundColor: getRandomHexColor()}}>
+        // style={{ backgroundColor: getRandomHexColor() }}
+        <StyledItem key={stat.id}>
           <StatisticsItem stat={stat} />
         </StyledItem>
       ))}
